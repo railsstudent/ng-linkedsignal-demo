@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {
-        path: 'expose-previous',
+        path: 'update-link-signal',
         loadComponent: () => import('./pagination/pagination.component')
     },
     {
@@ -10,23 +10,31 @@ export const routes: Routes = [
         loadComponent: () => import('./favorite-country/favorite-country.component')
     },
     {
+        path: 'reset-link-signal',
+        loadComponent: () => import('./shoe-sizes/shoe-sizes.component')
+    },
+    {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'update-linked-signal'
+        redirectTo: 'update-link-signal'
     },
     {
         path: '**',
-        redirectTo: 'update-linked-signal'
+        redirectTo: 'update-link-signal'
     }
 ];
 
 export const navLinks = [
     {
-        link: 'Expose previous in the linked signal',
-        path: ['expose-previous'],
+        link: 'The linked signal with source and computation',
+        path: ['update-link-signal'],
     },
     {
       link: 'The shorthand version of the linked signal',
       path: ['update-shorthand'],
+    },
+    {
+        link: 'Reset link signal when source changes',
+        path: ['reset-link-signal'],
     },
 ];
