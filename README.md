@@ -2,6 +2,10 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0-next.12.
 
+## LinkSignal PR
+
+https://github.com/angular/angular/pull/58189/files#diff-16f850f5f33730f7b3574e2137ab8750f5f90be010f6d2899b7b7de0a4d11648
+
 ## Development server
 
 To start a local development server, run:
