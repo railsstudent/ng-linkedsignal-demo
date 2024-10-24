@@ -8,7 +8,7 @@ const LAST_PAGE = 200;
   standalone: true,
   imports: [FormsModule],
   template: `
-     <h2>Update the shorthand version of the linked signal</h2>
+    <h2>Update the shorthand version of the linked signal</h2>
     <div>
       <button (click)="pageNumber.set(1)">First</button>
       <button (click)="changePageNumber(-1)">Prev</button>    
