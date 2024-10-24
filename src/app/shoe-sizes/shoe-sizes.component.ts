@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, linkedSignal, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-const SHOE_SIZES = [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5];
+const SHOE_SIZES = [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10];
 const SHOE_SIZES2 = [4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 @Component({
