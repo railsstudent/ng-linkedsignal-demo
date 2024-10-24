@@ -6,10 +6,12 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   template: `
-    <h2>Update source of Linked Signal Demo</h2>
-    <p>Your input: <input [(ngModel)]="favoriteCountry" /></p>
-    <button (click)="reset()">Reset</button>
+    <h2>Update the shorthand version of the linked signal. Set and update the signal</h2>
+    <p>Update country: <input [(ngModel)]="country" /></p>
+    <p>Update favorite country: <input [(ngModel)]="favoriteCountry" /></p>
+    <button (click)="country.set('United States of America')">Reset</button>
     <button (click)="changeCountry()">Update source and linked signal</button>
+    <p>Country: {{ country() }}</p>
     <p>Favorite Country: {{ favoriteCountry() }}</p>
     <p>Reversed Country: {{ reversedFavoriteCountry() }}</p>
   `,
@@ -17,13 +19,9 @@ import { FormsModule } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class FavoriteCountryComponent {
-  country = signal('United State of America')
+  country = signal('United States of America')
 
-  favoriteCountry = linkedSignal({
-    source: this.country,
-    computation: (options) => options
-  });
-
+  favoriteCountry = linkedSignal(() => this.country());
   reversedFavoriteCountry = computed(() => this.favoriteCountry().split('').toReversed().join(''));
 
   changeCountry() {
@@ -32,9 +30,5 @@ export default class FavoriteCountryComponent {
 
     // updated the linked signal because it is a writable signal
     this.favoriteCountry.update((c) => c.toUpperCase());
-  }
-
-  reset() {
-    this.country.set('United States of America');
   }
 }
