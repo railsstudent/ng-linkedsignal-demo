@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {
-        path: 'update-link-signal',
+        path: 'update-linked-signal',
         loadComponent: () => import('./pagination/pagination.component')
     },
     {
@@ -10,31 +10,39 @@ export const routes: Routes = [
         loadComponent: () => import('./favorite-country/favorite-country.component')
     },
     {
-        path: 'reset-link-signal',
+        path: 'reset-linked-signal',
         loadComponent: () => import('./shoe-sizes/shoe-sizes.component')
+    },
+    {
+        path: 'linked-signal-in-store',
+        loadComponent: () => import('./shoe-sizes-store/shoe-sizes-store.component')
     },
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'update-link-signal'
+        redirectTo: 'update-linked-signal'
     },
     {
         path: '**',
-        redirectTo: 'update-link-signal'
+        redirectTo: 'update-linked-signal'
     }
 ];
 
 export const navLinks = [
     {
-        link: 'The linked signal with source and computation',
-        path: ['update-link-signal'],
+        link: 'The LinkedSignal with source and computation',
+        path: ['update-linked-signal'],
     },
     {
-      link: 'The shorthand version of the linked signal',
+      link: 'The shorthand version of the LinkedSignal',
       path: ['update-shorthand'],
     },
     {
-        link: 'Reset link signal when source changes',
-        path: ['reset-link-signal'],
+        link: 'Reset LinkedSignal when source changes',
+        path: ['reset-linked-signal'],
+    },
+    {
+        link: 'LinkedSignal in store',
+        path: ['linked-signal-in-store'],
     },
 ];
