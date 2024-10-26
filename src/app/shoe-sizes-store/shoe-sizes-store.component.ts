@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ShoeSizesService } from '../services/shoe-sizes.service';
+import { ShoeSizesStore } from '../stores';
 
 @Component({
   selector: 'app-shoe-sizes-store',
@@ -28,10 +28,8 @@ import { ShoeSizesService } from '../services/shoe-sizes.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class ShoeSizesStoreComponent {
-  shoeSizesService = inject(ShoeSizesService);
-  
-  currentShoeSize = this.shoeSizesService.currentShoeSize;
-  shoeSizes = this.shoeSizesService.shoeSizes;
+  currentShoeSize = ShoeSizesStore.currentShoeSize;
+  shoeSizes = ShoeSizesStore.shoeSizes;
 
   index = computed(() => this.shoeSizes().indexOf(this.currentShoeSize()));
 
@@ -40,14 +38,9 @@ export default class ShoeSizesStoreComponent {
   }
 
   updateShoeSize(value: number) {
-    this.shoeSizesService.updateShoeSize(value);
+    ShoeSizesStore.updateShoeSize(value);
   }
 
-  changeShoeSizes() {
-    this.shoeSizesService.changeShoeSizes();
-  }
-
-  updateLargestSize() {
-    this.shoeSizesService.updateLargestSize();
-  }
+  changeShoeSizes = ShoeSizesStore.changeShoeSizes;
+  updateLargestSize = ShoeSizesStore.updateLargestSize;
 }
