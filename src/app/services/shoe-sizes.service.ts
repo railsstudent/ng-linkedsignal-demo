@@ -3,6 +3,12 @@ import { Injectable, linkedSignal, signal } from '@angular/core';
 const SHOE_SIZES = [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10];
 const SHOE_SIZES2 = [4, 5, 6, 7, 8, 9, 10, 11, 12]
 
+// export const ShoeSizesStore = {
+//   #shoeSizes: signal(SHOE_SIZES),
+//   shoeSizes: #shoeSizes.asReadonly()
+
+// }
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,19 +26,14 @@ export class ShoeSizesService {
       }
 
       // shoe size found in the new shoe size list
-      if (options.includes(previous.value)) {
-        return previous.value;
-      }
-
       // reset to the first shoe size because the new list does not contain the previous shoe size
-      return options[0]; 
+      return options.includes(previous.value) ? previous.value : options[0];
     }
   });
 
   currentShoeSize = this.#currentShoeSize.asReadonly();
 
   updateShoeSize(value: number) {
-    console.log('updateShoeSize called', value);
     this.#currentShoeSize.set(value);
   }
 

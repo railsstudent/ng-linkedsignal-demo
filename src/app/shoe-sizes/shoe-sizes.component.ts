@@ -39,12 +39,8 @@ export default class ShoeSizesComponent {
       }
 
       // shoe size found in the new shoe size list
-      if (options.includes(previous.value)) {
-        return previous.value;
-      }
-
       // reset to the first shoe size because the new list does not contain the previous shoe size
-      return options[0]; 
+      return options.includes(previous.value) ? previous.value : options[0];
     }
   });
 
