@@ -1,10 +1,5 @@
 #!/bin/sh
 
-if [ $# -lt 1 ]; then
-    echo "Usage: $0 <app folder name>"
-    exit 1
-fi
-
 echo "delete docs"
 rm -rf docs
 echo "build project ng-linkedsignal-demo starts"
