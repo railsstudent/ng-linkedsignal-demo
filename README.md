@@ -2,9 +2,13 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0-next.12.
 
-## LinkSignal PR
+## LinkedSignal PR
 
 https://github.com/angular/angular/pull/58189/files#diff-16f850f5f33730f7b3574e2137ab8750f5f90be010f6d2899b7b7de0a4d11648
+
+## Github Page
+
+URL: https://railsstudent.github.io/ng-linkedsignal-demo/update-linked-signal
 
 ## Development server
 
