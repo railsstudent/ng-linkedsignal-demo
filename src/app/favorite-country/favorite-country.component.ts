@@ -2,10 +2,9 @@ import { ChangeDetectionStrategy, Component, computed, linkedSignal, signal } fr
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-favorite-country',
-  standalone: true,
-  imports: [FormsModule],
-  template: `
+    selector: 'app-favorite-country',
+    imports: [FormsModule],
+    template: `
     <h2>Update the shorthand version of the linked signal. Set and update the signal</h2>
     <p>Update country: <input [(ngModel)]="country" /></p>
     <p>Update favorite country: <input [(ngModel)]="favoriteCountry" /></p>
@@ -15,8 +14,8 @@ import { FormsModule } from '@angular/forms';
     <p>Favorite Country: {{ favoriteCountry() }}</p>
     <p>Reversed Country: {{ reversedFavoriteCountry() }}</p>
   `,
-  styles: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    styles: ``,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class FavoriteCountryComponent {
   country = signal('United States of America')

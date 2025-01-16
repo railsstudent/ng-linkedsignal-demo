@@ -5,10 +5,9 @@ const SHOE_SIZES = [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10];
 const SHOE_SIZES2 = [4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 @Component({
-  selector: 'app-shoe-sizes',
-  standalone: true,
-  imports: [FormsModule],
-  template: `
+    selector: 'app-shoe-sizes',
+    imports: [FormsModule],
+    template: `
     <h2>Reset linked signal after updating source</h2>
     <p>Source: {{ shoeSizes() }}</p>
     <p>Shoe size: {{ currentShoeSize() }}</p>
@@ -26,7 +25,7 @@ const SHOE_SIZES2 = [4, 5, 6, 7, 8, 9, 10, 11, 12]
       </select>
     </label>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class ShoeSizesComponent {
   shoeSizes = signal(SHOE_SIZES);

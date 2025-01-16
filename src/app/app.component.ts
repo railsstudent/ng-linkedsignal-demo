@@ -5,14 +5,13 @@ import { NavbarComponent } from './navbar.component';
 import { navLinks } from './app.routes';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, NavbarComponent],
-  template: `
+    selector: 'app-root',
+    imports: [RouterOutlet, NavbarComponent],
+    template: `
     <h2>Version: {{ version }}</h2>
     <app-navbar [navLinks]="navLinks" />
     <router-outlet />
-  `,
+  `
 })
 export class AppComponent {
   version = VERSION.full;

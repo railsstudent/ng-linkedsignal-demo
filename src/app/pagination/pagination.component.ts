@@ -4,10 +4,9 @@ import { FormsModule } from '@angular/forms';
 const LAST_PAGE = 200;
 
 @Component({
-  selector: 'app-pagination',
-  standalone: true,
-  imports: [FormsModule],
-  template: `
+    selector: 'app-pagination',
+    imports: [FormsModule],
+    template: `
     <h2>Update the shorthand version of the linked signal</h2>
     <div>
       <button (click)="pageNumber.set(1)">First</button>
@@ -20,13 +19,13 @@ const LAST_PAGE = 200;
     <p>Current Page Number {{ currentPageNumber() }}</p>
     <p>Percentage of completion: {{ percentageOfCompletion() }}</p>
   `,
-  styles: `
+    styles: `
     div {
       display: flex;
       align-items: center;
     }
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class PaginationComponent {
   lastPage = LAST_PAGE;

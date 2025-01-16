@@ -3,10 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { ShoeSizesStore } from '../stores';
 
 @Component({
-  selector: 'app-shoe-sizes-store',
-  standalone: true,
-  imports: [FormsModule],
-  template: `
+    selector: 'app-shoe-sizes-store',
+    imports: [FormsModule],
+    template: `
     <h2>Reset linked signal after updating source</h2>
     <p>Source: {{ shoeSizes() }}</p>
     <p>Shoe size: {{ currentShoeSize() }}</p>
@@ -24,8 +23,8 @@ import { ShoeSizesStore } from '../stores';
       </select>
     </label>
   `,
-  styles: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    styles: ``,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class ShoeSizesStoreComponent {
   currentShoeSize = ShoeSizesStore.currentShoeSize;
